@@ -15,6 +15,7 @@ export const TodoForm = ({onSubmit}) => {
          onSubmit({
              id: Math.floor(Math.random()*10000),/*generamos un numero aleatorio como id*/
              text: input,
+            completed: false,
  
          });
         setInput('');

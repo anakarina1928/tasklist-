@@ -1,10 +1,9 @@
-
-
-
+import { TodoList } from "./components/TodoList";
+import './App.css';
 function App() {
   return (
     <>
-    <h1>Hello word</h1>
+  <TodoList />
     </>
   );
 }
