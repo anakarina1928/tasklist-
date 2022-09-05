@@ -34,7 +34,7 @@ export const Todo = ({ todos, completeTodo, deleteTodo, updateTodo }) => {
   }
 
   const handleKeyDown = (event) => {
-    if (event.key == 'Enter') {
+    if (event.key === 'Enter') {
       updateTodo(editTodo.id, editTodo.value);
       setEditTodo({
         id: null,
