@@ -66,20 +66,20 @@ export const Todo = ({ todos, completeTodo, deleteTodo, updateTodo }) => {
 
                 </div>
 
-                <div className='icons '>
+                <div className=' d-flex  justify-content-around '>
                   <FaRegCheckCircle
-                   onClick={() => completeTodo(todo.id)}
-
+                    onClick={() => completeTodo(todo.id)}
+                    className='todo-icon'
                   />
 
                   <RiCloseCircleLine
                     onClick={() => deleteTodo(todo.id)}
-                    className='todo-delete-icon'
+                    className='todo-icon'
                   />
 
                   <TbEditCircle
                     onClick={() => setModeEditingForTodo(todo.id, todo.text)}
-
+                    className='todo-icon'
                   />
 
                 </div>

@@ -53,3 +53,12 @@
   row-gap: 2rem;
   padding: 4rem 0 1rem;
 }
+
+.icons{
+  display: flex;
+  justify-content: space-around;
+}
+.todo-icon{
+  color: rgb(249, 252, 252);
+  font-size: 20px;
+}
