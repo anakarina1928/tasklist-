@@ -1,11 +1,11 @@
 import { React, useState } from 'react'
 import { TodoForm } from './TodoForm'
 import { Todo } from './Todo';
-
+import '../asset/todoList.css'
 
 export const TodoList = () => {
   const [todos, setTodos] = useState([]);
- 
+ // const [editOpen, setEditOpen] = useState(null);
 
 
   const onAddTodo = todo => {
@@ -21,49 +21,60 @@ export const TodoList = () => {
     console.log(newTodos);
   };
 
+  const updateTodo= (id, newText)=>{
+
+    const newTodos= todos.map((todo)=>{
+
+      if(id=== todo.id){
+        todo.text= newText
+      }
+      return todo;
+    })
+
+    setTodos(newTodos);
+  };
+
 
   const completeTodo = (id) => {
     const todoIndex = todos.findIndex(todo => todo.id === id);
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos);
-   
+
     console.log(newTodos);
   };
-
+    
+  
   const deleteTodo = (id) => {
     const todoIndex = todos.findIndex(todo => todo.id === id);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    
+
     setTodos(newTodos);
   };
-  /*
-      const completeTodo = id => {
-          let updatedTodos = todos.map(todo => {
-            if (todo.id === id) {
-              todo.isComplete = !todo.isComplete;
-            }
-            return todo;
-          });
-          setTodos(updatedTodos);
-        };
-  */
-
 
   return (
-    <div>
-      <h1>¿cuáles son las tareas para hoy? </h1>
+    <div className=' container '>
 
-      <TodoForm
-        onSubmit={onAddTodo}
-      />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        deleteTodo={deleteTodo}
-       
-      />
+      <header className='component-header'>
+        <h1>¡Hola! ¿Cuáles son las tareas de hoy? </h1>
+
+        <TodoForm
+          onSubmit={onAddTodo}
+        />
+      </header>
+
+      <div className=''>
+        <div className=''>
+          <Todo
+            todos={todos}
+            completeTodo={completeTodo}
+            deleteTodo={deleteTodo}                        
+            updateTodo={updateTodo}
+          />
+        </div>
+      </div>
     </div>
   )
 }

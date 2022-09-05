@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg,
+            rgb(7, 7, 7) 0%,
+            rgb(216, 32, 106) 100%);
+}
+
+.component-header {
+    row-gap: 2rem;
+    padding: 4rem 0 1rem;
+    padding: 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.component-header h1 {
+
+    font-weight: 700;
+    color: whitesmoke;
+    text-shadow: 1.2px 1.2px rgb(158, 157, 157);
+}
